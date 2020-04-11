@@ -1,12 +1,18 @@
 package headFirst.pizzaFactory;
 
 abstract class Pizza {
-  Ingredient[] ingredients;
   String name;
+  Ingredient[] toppings;
+  Ingredient dough;
+  Ingredient sauce;
 
   void prepare() {
     System.out.println("Preparing the pizza...");
-    for(Ingredient ingredient : ingredients) {
+
+    System.out.println("...tossing the " + dough);
+    System.out.println("...ladeling the " + sauce);
+
+    for(Ingredient ingredient : toppings) {
       System.out.println("...adding " + ingredient);
     }
   }

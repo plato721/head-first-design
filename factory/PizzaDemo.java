@@ -2,11 +2,13 @@ package headFirst.pizzaFactory;
 
 public class PizzaDemo {
   public static void main(String[] args) {
-    PizzaFactory factory = new SimplePizzaFactory();
-    PizzaStore store = new PizzaStore(factory);
+    PizzaStore nyPizzaStore = new NYPizzaStore();
 
-    Pizza pizza = store.orderPizza("cheese");
-    Pizza pizza2 = store.orderPizza("pepperoni");
+    // ny cheese pizza
+    Pizza nyCheese = nyPizzaStore.orderPizza("cheese");
+    Pizza nyPepperoni = nyPizzaStore.orderPizza("pepperoni");
+
+    // chicago veggies pizza
 
     return;
   }
