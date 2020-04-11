@@ -11,7 +11,8 @@ public class PizzaStore {
     Pizza pizza = null;
     System.out.println("Your ordered a " + type + " pizza. Good for you!");
 
-    pizza = factory.preparePizza(type);
+    pizza = factory.createPizza(type);
+    pizza.prepare();
     pizza.bake();
     pizza.cut();
     pizza.box();

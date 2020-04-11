@@ -4,6 +4,10 @@ public class Ingredient {
   String type;
 
   public Ingredient (String type) {
-    type = type;
+    this.type = type;
+  }
+
+  public String toString() {
+    return type;
   }
 }

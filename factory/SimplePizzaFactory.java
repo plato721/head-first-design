@@ -1,7 +1,7 @@
 package headFirst.pizzaFactory;
 
 class SimplePizzaFactory implements PizzaFactory {
-  public Pizza preparePizza(String type) {
+  public Pizza createPizza(String type) {
     Pizza pizza = null;
 
     if (type.equals("cheese")) {
