@@ -4,6 +4,13 @@ abstract class Pizza {
   Ingredient[] ingredients;
   String name;
 
+  void prepare() {
+    System.out.println("Preparing the pizza...");
+    for(Ingredient ingredient : ingredients) {
+      System.out.println("...adding " + ingredient);
+    }
+  }
+
   void bake(){
     System.out.println("Baking the pizza!");
   }

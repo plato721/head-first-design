@@ -1,5 +1,5 @@
 package headFirst.pizzaFactory;
 
 public interface PizzaFactory {
-  Pizza preparePizza(String type);
+  Pizza createPizza(String type);
 }
