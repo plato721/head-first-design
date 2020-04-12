@@ -1,6 +1,8 @@
 package headFirst.pizzaFactory;
 
 public abstract class PizzaStore {
+  PizzaIngredientFactory ingredientFactory;
+
   public Pizza orderPizza(String type) {
     Pizza pizza = null;
     System.out.println("Your ordered a " + type + " pizza. Good for you!");
