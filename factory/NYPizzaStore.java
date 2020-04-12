@@ -1,13 +1,13 @@
 package headFirst.pizzaFactory;
 
-class SimplePizzaFactory implements PizzaFactory {
-  public Pizza createPizza(String type) {
+public class NYPizzaStore extends PizzaStore {
+  Pizza createPizza(String type) {
     Pizza pizza = null;
 
     if (type.equals("cheese")) {
-      pizza = new CheesePizza();
+      pizza = new NYCheesePizza();
     } else if (type.equals("pepperoni")) {
-      pizza = new PepperoniPizza();
+      pizza = new NYPepperoniPizza();
     } //else if (type.equals("clam")) {
     //   pizza = new ClamPizza();
     // } else if (type.equals("veggie")) {

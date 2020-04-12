@@ -1,17 +1,11 @@
 package headFirst.pizzaFactory;
 
-public class PizzaStore {
-  PizzaFactory factory;
-
-  public PizzaStore(PizzaFactory factory) {
-    this.factory = factory;
-  }
-
+public abstract class PizzaStore {
   public Pizza orderPizza(String type) {
     Pizza pizza = null;
     System.out.println("Your ordered a " + type + " pizza. Good for you!");
 
-    pizza = factory.createPizza(type);
+    pizza = createPizza(type);
     pizza.prepare();
     pizza.bake();
     pizza.cut();
@@ -21,4 +15,6 @@ public class PizzaStore {
 
     return pizza;
   }
+
+  abstract Pizza createPizza(String type);
 }
