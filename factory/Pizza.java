@@ -2,9 +2,9 @@ package headFirst.pizzaFactory;
 
 abstract class Pizza {
   String name;
-  Ingredient[] toppings;
   Ingredient dough;
   Ingredient sauce;
+  Ingredient[] toppings;
 
   void prepare() {
     System.out.println("Preparing the pizza...");
