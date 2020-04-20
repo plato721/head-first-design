@@ -1,10 +1,11 @@
 package headFirst.singleton;
 
 public class Singleton {
-  private static Singleton theOneThing = null;
+  private static Singleton theOneThing = new Singleton();
+
   private Singleton(){}
 
-  public static synchronized Singleton getInstance(){
+  public static Singleton getInstance(){
     if (theOneThing == null) {
       theOneThing = new Singleton();
     }
