@@ -1,13 +1,17 @@
 package headFirst.singleton;
 
 public class Singleton {
-  private static Singleton theOneThing = new Singleton();
+  private volatile static Singleton theOneThing = null;
 
   private Singleton(){}
 
   public static Singleton getInstance(){
     if (theOneThing == null) {
-      theOneThing = new Singleton();
+      synchronized (Singleton.class) {
+        if (theOneThing == null) {
+          theOneThing = new Singleton();
+        }
+      }
     }
     return theOneThing;
   }
