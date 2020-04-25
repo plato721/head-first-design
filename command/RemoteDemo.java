@@ -8,7 +8,7 @@ public class RemoteDemo {
     Command lightOnCommand = new LightOnCommand(light);
 
     RemoteControl remote = new RemoteControl();
-    remote.programSlot(lightOnCommand);
-    remote.buttonPushed();
+    remote.programOnCommand(0, lightOnCommand);
+    remote.onButtonPushed(0);
   }
 }
