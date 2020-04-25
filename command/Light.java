@@ -3,13 +3,14 @@ package headFirst.command;
 public class Light {
   Boolean on = false;
 
-  public void turnOn() {
+  public void on() {
     on = true;
-    System.out.println("Light has been turned on!");
+    System.out.println("Light is on");
   }
 
-  public void turnOff() {
+  public void off() {
     on = false;
+    System.out.println("Light is off");
   }
 
   public boolean isLightOn() {
