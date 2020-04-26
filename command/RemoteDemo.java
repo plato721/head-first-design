@@ -26,7 +26,6 @@ public class RemoteDemo {
     Command stereoOnCommand = new StereoOnWithCDCommand(stereo);
     Command stereoOffCommand = new StereoOffCommand(stereo);
 
-
     remote.programOnCommand(0, lrLightOnCommand);
     remote.programOffCommand(0, lrLightOffCommand);
 
@@ -42,24 +41,18 @@ public class RemoteDemo {
     remote.programOnCommand(4, stereoOnCommand);
     remote.programOffCommand(4, stereoOffCommand);
 
+    System.out.println(remote);
+
     remote.onButtonPushed(0);
     remote.offButtonPushed(0);
-    remote.onButtonPushed(0);
 
     remote.onButtonPushed(1);
     remote.offButtonPushed(1);
-    remote.onButtonPushed(1);
 
     remote.onButtonPushed(2);
     remote.offButtonPushed(2);
-    remote.onButtonPushed(2);
 
     remote.onButtonPushed(3);
     remote.offButtonPushed(3);
-    remote.onButtonPushed(3);
-
-    remote.onButtonPushed(4);
-    remote.offButtonPushed(4);
-    remote.onButtonPushed(4);
   }
 }
