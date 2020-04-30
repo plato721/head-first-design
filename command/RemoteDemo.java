@@ -2,57 +2,27 @@ package headFirst.command;
 
 public class RemoteDemo {
   public static void main(String[] args) {
-    System.out.println("Running the thing!");
-
     RemoteControl remote = new RemoteControl();
 
-    Light lrLight = new Light("Living Room");
-    Command lrLightOnCommand = new LightOnCommand(lrLight);
-    Command lrLightOffCommand = new LightOffCommand(lrLight);
+    CeilingFan ceilingFan = new CeilingFan("Living Room");
 
-    Light kitchenLight = new Light("Kitchen");
-    Command kitchenLightOnCommand = new LightOnCommand(kitchenLight);
-    Command kitchenLightOffCommand = new LightOffCommand(kitchenLight);
-
-    CeilingFan ceilingFan = new CeilingFan();
-    Command ceilingFanOnCommand = new CeilingFanOnCommand(ceilingFan);
+    Command ceilingFanMediumCommand = new CeilingFanMediumCommand(ceilingFan);
+    Command ceilingFanHighCommand = new CeilingFanHighCommand(ceilingFan);
     Command ceilingFanOffCommand = new CeilingFanOffCommand(ceilingFan);
 
-    GarageDoor garageDoor = new GarageDoor();
-    Command garageDoorUpCommand = new GarageDoorUpCommand(garageDoor);
-    Command garageDoorDownCommand = new GarageDoorDownCommand(garageDoor);
+    remote.programOnCommand(0, ceilingFanMediumCommand);
+    remote.programOffCommand(0, ceilingFanOffCommand);
 
-    Stereo stereo = new Stereo();
-    Command stereoOnCommand = new StereoOnWithCDCommand(stereo);
-    Command stereoOffCommand = new StereoOffCommand(stereo);
-
-    remote.programOnCommand(0, lrLightOnCommand);
-    remote.programOffCommand(0, lrLightOffCommand);
-
-    remote.programOnCommand(1, kitchenLightOnCommand);
-    remote.programOffCommand(1, kitchenLightOffCommand);
-
-    remote.programOnCommand(2, ceilingFanOnCommand);
-    remote.programOffCommand(2, ceilingFanOffCommand);
-
-    remote.programOnCommand(3, garageDoorUpCommand);
-    remote.programOffCommand(3, garageDoorDownCommand);
-
-    remote.programOnCommand(4, stereoOnCommand);
-    remote.programOffCommand(4, stereoOffCommand);
-
-    System.out.println(remote);
+    remote.programOnCommand(1, ceilingFanHighCommand);
+    remote.programOffCommand(1, ceilingFanOffCommand);
 
     remote.onButtonPushed(0);
     remote.offButtonPushed(0);
+    System.out.println(remote);
+    remote.undoButtonPushed();
 
     remote.onButtonPushed(1);
-    remote.offButtonPushed(1);
-
-    remote.onButtonPushed(2);
-    remote.offButtonPushed(2);
-
-    remote.onButtonPushed(3);
-    remote.offButtonPushed(3);
+    System.out.println(remote);
+    remote.undoButtonPushed();
   }
 }

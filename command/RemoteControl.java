@@ -3,6 +3,7 @@ package headFirst.command;
 public class RemoteControl {
   Command[] onCommands;
   Command[] offCommands;
+  Command lastCommand;
 
   public RemoteControl () {
     this.onCommands = new Command[7];
@@ -12,6 +13,7 @@ public class RemoteControl {
       onCommands[i] = nullCommand;
       offCommands[i] = nullCommand;
     }
+    this.lastCommand = nullCommand;
   }
 
   public void programOnCommand(Integer slot, Command command) {
@@ -24,10 +26,16 @@ public class RemoteControl {
 
   public void onButtonPushed(Integer slot) {
     onCommands[slot].execute();
+    lastCommand = onCommands[slot];
   }
 
   public void offButtonPushed(Integer slot) {
     offCommands[slot].execute();
+    lastCommand = offCommands[slot];
+  }
+
+  public void undoButtonPushed() {
+    lastCommand.undo();
   }
 
   public String toString() {
@@ -37,6 +45,7 @@ public class RemoteControl {
       stringBuff.append("[slot " + i + "] " + commandToString(onCommands[i])
         + "    " + commandToString(offCommands[i]) + "\n");
     }
+    stringBuff.append("[undo] " + commandToString(lastCommand));
     return stringBuff.toString();
   }
 

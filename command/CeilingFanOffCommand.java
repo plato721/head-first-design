@@ -1,13 +1,12 @@
 package headFirst.command;
 
-public class CeilingFanOffCommand implements Command {
-  CeilingFan ceilingFan;
-
+public class CeilingFanOffCommand extends CeilingFanCommand implements Command {
   public CeilingFanOffCommand(CeilingFan ceilingFan) {
-    this.ceilingFan = ceilingFan;
+    super(ceilingFan);
   }
 
   public void execute() {
+    prevSpeed = ceilingFan.getSpeed();
     ceilingFan.off();
   }
 }

@@ -1,31 +1,39 @@
 package headFirst.command;
 
 public class CeilingFan {
-  String speed;
+  public static final int HIGH = 5;
+  public static final int MEDIUM = 3;
+  public static final int LOW = 1;
+  public static final int OFF = 0;
 
-  public CeilingFan() {}
+  int speed;
+  String location;
+
+  public CeilingFan(String location) {
+    this.location = location;
+  }
 
   public void high() {
-    this.speed = "High";
+    this.speed = HIGH;
     alertSettingChanged();
   }
 
   public void medium() {
-    this.speed = "Medium";
+    this.speed = MEDIUM;
     alertSettingChanged();
   }
 
   public void low() {
-    this.speed = "Low";
+    this.speed = LOW;
     alertSettingChanged();
   }
 
   public void off() {
-    this.speed = "Off";
+    this.speed = OFF;
     alertSettingChanged();
   }
 
-  public String getSpeed() {
+  public Integer getSpeed() {
     return this.speed;
   }
 

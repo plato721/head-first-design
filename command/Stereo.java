@@ -28,4 +28,8 @@ public class Stereo {
     this.volume = volume;
     System.out.println("Volume has been turned to " + volume);
   }
+
+  public int getVolume() {
+    return volume;
+  }
 }
