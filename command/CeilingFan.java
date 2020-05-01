@@ -15,29 +15,29 @@ public class CeilingFan {
 
   public void high() {
     this.speed = HIGH;
-    alertSettingChanged();
+    alertSettingChanged("high");
   }
 
   public void medium() {
     this.speed = MEDIUM;
-    alertSettingChanged();
+    alertSettingChanged("medium");
   }
 
   public void low() {
     this.speed = LOW;
-    alertSettingChanged();
+    alertSettingChanged("low");
   }
 
   public void off() {
     this.speed = OFF;
-    alertSettingChanged();
+    alertSettingChanged("off");
   }
 
   public Integer getSpeed() {
     return this.speed;
   }
 
-  public void alertSettingChanged() {
-    System.out.println("Fan has been set to " + this.speed);
+  public void alertSettingChanged(String speedWord) {
+    System.out.println("Fan has been set to " + speedWord);
   }
 }
