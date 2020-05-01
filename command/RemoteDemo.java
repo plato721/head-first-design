@@ -5,24 +5,29 @@ public class RemoteDemo {
     RemoteControl remote = new RemoteControl();
 
     CeilingFan ceilingFan = new CeilingFan("Living Room");
+    Stereo stereo = new Stereo();
 
-    Command ceilingFanMediumCommand = new CeilingFanMediumCommand(ceilingFan);
-    Command ceilingFanHighCommand = new CeilingFanHighCommand(ceilingFan);
-    Command ceilingFanOffCommand = new CeilingFanOffCommand(ceilingFan);
+    remote.programOnCommand(0, ceilingFan::medium);
+    remote.programOffCommand(0, ceilingFan::off);
 
-    remote.programOnCommand(0, ceilingFanMediumCommand);
-    remote.programOffCommand(0, ceilingFanOffCommand);
+    remote.programOnCommand(1, ceilingFan::high);
+    remote.programOffCommand(1, ceilingFan::off);
 
-    remote.programOnCommand(1, ceilingFanHighCommand);
-    remote.programOffCommand(1, ceilingFanOffCommand);
+    Command stereoOn = () -> {
+      stereo.on(); stereo.setCD(); stereo.setVolume(11); 
+    };
 
+    remote.programOnCommand(2, stereoOn);
+    remote.programOffCommand(2, stereo::off);
+
+    System.out.println(remote);
     remote.onButtonPushed(0);
     remote.offButtonPushed(0);
-    System.out.println(remote);
-    remote.undoButtonPushed();
 
     remote.onButtonPushed(1);
-    System.out.println(remote);
-    remote.undoButtonPushed();
+    remote.offButtonPushed(1);
+
+    remote.onButtonPushed(2);
+    remote.offButtonPushed(2);
   }
 }
