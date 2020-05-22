@@ -2,7 +2,7 @@ package headFirst.facade;
 
 public class Screen {
   public void up() {
-    System.out.println("");
+    System.out.println("Theater Screen going up");
   }
 
   public void down() {

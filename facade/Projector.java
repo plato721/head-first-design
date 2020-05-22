@@ -6,7 +6,8 @@ public class Projector {
   }
 
   public void off() {
-    System.out.println("");
+    String output = String.format("%s off", this);
+    System.out.println(output);
   }
 
   public void tvMode() {
@@ -14,10 +15,11 @@ public class Projector {
   }
 
   public void wideScreenMode() {
-    System.out.println("Top-O-Line Projector in widescreen mode (16x9 aspect ratio)");
+    String output = String.format("%s in widescreen mode (16x9 aspect ratio)", this);
+    System.out.println(output);
   }
 
   public String toString() {
-    return "";
+    return "Top-O-Line Projector";
   }
 }

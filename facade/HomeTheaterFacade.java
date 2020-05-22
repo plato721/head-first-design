@@ -45,7 +45,17 @@ public class HomeTheaterFacade {
     dvd.play(movie);
   }
 
-  public void endMovie(){}
+  public void endMovie(){
+    System.out.println("Shutting 'er down...");
+    popper.off();
+    lights.on();
+    screen.up();
+    projector.off();
+    amp.off();
+    dvd.stop();
+    dvd.eject();
+    dvd.off();
+  }
   public void listenToCd(){}
   public void endCd(){}
   public void listenToRadio(){}

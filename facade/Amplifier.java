@@ -21,7 +21,8 @@ public class Amplifier {
   }
 
   public void off() {
-    System.out.println("");
+    String output = String.format("%s off", this);
+    System.out.println(output);
   }
 
   public void setCd() {

@@ -7,7 +7,7 @@ public class Popper {
   }
 
   public void off() {
-    System.out.println("");
+    System.out.println("Popcorn popper off");
   }
 
   public void pop() {

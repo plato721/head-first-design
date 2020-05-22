@@ -2,7 +2,7 @@ package headFirst.facade;
 
 public class TheaterLights {
   public void on() {
-    System.out.println("");
+    System.out.println("Theater Ceiling Lights on");
   }
 
   public void off() {
