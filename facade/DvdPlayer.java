@@ -1,14 +1,15 @@
 package headFirst.facade;
 
 public class DvdPlayer {
-  Amplifier amplifier;
+  Amplifier amp;
 
-  public DvdPlayer(Amplifier amplifier) {
-    this.amplifier = amplifier;
+  public void setAmp(Amplifier amp) {
+    this.amp = amp;
   }
 
   public void on() {
-    System.out.println("");
+    String output = String.format("%s on", this);
+    System.out.println(output);
   }
 
   public void off() {
@@ -23,8 +24,9 @@ public class DvdPlayer {
     System.out.println("");
   }
 
-  public void play() {
-    System.out.println("");
+  public void play(String movie) {
+    String message = String.format("%1$s playing the movie \"%2$s\"!", this, movie);
+    System.out.println(message);
   }
 
   public void setSurroundAudio() {
@@ -40,6 +42,6 @@ public class DvdPlayer {
   }
 
   public String toString() {
-    return "";
+    return "Top-O-Line DVD Player";
   }
 }

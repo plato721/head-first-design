@@ -2,17 +2,22 @@ package headFirst.facade;
 
 public class Amplifier {
   Tuner tuner;
-  DvdPlayer dvdPlayer;
+  DvdPlayer dvd;
   CdPlayer cdPlayer;
+  Integer volume;
 
-  public Amplifier(Tuner tuner, DvdPlayer dvdPlayer, CdPlayer cdPlayer) {
+  public Amplifier(Tuner tuner, DvdPlayer dvd, CdPlayer cdPlayer) {
     this.tuner = tuner;
-    this.dvdPlayer = dvdPlayer;
+    tuner.setAmp(this);
+
+    this.dvd = dvd;
     this.cdPlayer = cdPlayer;
   }
 
   public void on() {
-    System.out.println("");
+    String output = String.format("%s on", this);
+    System.out.println(output);
+    outputDvd();
   }
 
   public void off() {
@@ -23,7 +28,14 @@ public class Amplifier {
     System.out.println("");
   }
 
-  public void setDvd() {
+  public void outputDvd() {
+    String output = String.format("%1$s dvd player set to %2$s", this, dvd);
+    System.out.println(output);
+  }
+
+  public void setDvd(DvdPlayer dvd) {
+    this.dvd = dvd;
+
     System.out.println("");
   }
 
@@ -32,18 +44,21 @@ public class Amplifier {
   }
 
   public void setSurroundSound() {
-    System.out.println("");
+    String output = String.format("%s surround sound on (5 speakers, 1 subwoofer)", this);
+    System.out.println(output);
   }
 
   public void setTuner() {
     System.out.println("");
   }
 
-  public void setVolume() {
-    System.out.println("");
+  public void setVolume(Integer volume) {
+    this.volume = volume;
+    String message = String.format("%s volume set to %d!", this, volume);
+    System.out.println(message);
   }
 
   public String toString() {
-    return "";
+    return "Top-O-Line Amplifier";
   }
 }

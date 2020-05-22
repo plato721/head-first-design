@@ -1,6 +1,12 @@
 package headFirst.facade;
 
 public class CdPlayer {
+  Amplifier amp;
+
+  public void setAmp(Amplifier amp) {
+    this.amp = amp;
+  }
+
   public void on() {
     System.out.println("");
   }

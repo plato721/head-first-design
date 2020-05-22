@@ -3,7 +3,7 @@ package headFirst.facade;
 public class Popper {
 
   public void on() {
-    System.out.println("");
+    System.out.println("Popcorn Popper on");
   }
 
   public void off() {
@@ -11,7 +11,7 @@ public class Popper {
   }
 
   public void pop() {
-    System.out.println("");
+    System.out.println("Popcorn Popper popping popcorn!");
   }
 
   public String toString() {

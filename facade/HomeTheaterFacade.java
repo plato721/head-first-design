@@ -6,18 +6,18 @@ public class HomeTheaterFacade {
     Screen screen;
     Popper popper;
     CdPlayer cdplayer;
-    TheaterLights theaterLights;
-    DvdPlayer dvdPlayer;
+    TheaterLights lights;
+    DvdPlayer dvd;
     Projector projector;
 
   public HomeTheaterFacade(
     Amplifier amp,
     Tuner tuner,
+    DvdPlayer dvd,
     Screen screen,
     Popper popper,
     CdPlayer cdplayer,
-    TheaterLights theaterLights,
-    DvdPlayer dvdPlayer,
+    TheaterLights lights,
     Projector projector
   ) {
     this.amp = amp;
@@ -25,12 +25,26 @@ public class HomeTheaterFacade {
     this.screen = screen;
     this.popper = popper;
     this.cdplayer = cdplayer;
-    this.theaterLights = theaterLights;
-    this.dvdPlayer = dvdPlayer;
+    this.lights = lights;
+    this.dvd = dvd;
     this.projector = projector;
   }
 
-  public void watchMovie(){}
+  public void watchMovie(String movie) {
+    System.out.println("Get ready to watch a movie...");
+    popper.on();
+    popper.pop();
+    lights.dim(10);
+    screen.down();
+    projector.on();
+    projector.wideScreenMode();
+    amp.on();
+    amp.setSurroundSound();
+    amp.setVolume(5);
+    dvd.on();
+    dvd.play(movie);
+  }
+
   public void endMovie(){}
   public void listenToCd(){}
   public void endCd(){}

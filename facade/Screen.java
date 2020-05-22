@@ -6,7 +6,7 @@ public class Screen {
   }
 
   public void down() {
-    System.out.println("");
+    System.out.println("Screen going down");
   }
 
   public String toString() {

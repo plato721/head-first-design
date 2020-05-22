@@ -9,8 +9,8 @@ public class TheaterLights {
     System.out.println("");
   }
 
-  public void dim() {
-    System.out.println("");
+  public void dim(Integer percentage) {
+    System.out.println("Theater Ceiling Lights dimming to " + percentage + "%");
   }
 
   public String toString() {
