@@ -11,7 +11,10 @@ public class Amplifier {
     tuner.setAmp(this);
 
     this.dvd = dvd;
+    dvd.setAmp(this);
+
     this.cdPlayer = cdPlayer;
+    cdPlayer.setAmp(this);
   }
 
   public void on() {
