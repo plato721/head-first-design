@@ -12,4 +12,8 @@ public class Tea extends CaffeinatedBeverage {
   public void addCondiments() {
     System.out.println("Adding lemon. Because reasons.");
   }
+
+  public void condimentsPrompt() {
+    System.out.println("Would you like lemon?");
+  }
 }
