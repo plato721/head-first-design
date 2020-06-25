@@ -21,4 +21,12 @@ public class MenuItem {
       "\n-----------------\n" +
       description + "\n";
   }
+
+  public boolean isVegetarian() {
+    return vegetarian;
+  }
+
+  public double getPrice() {
+    return price;
+  }
 }
