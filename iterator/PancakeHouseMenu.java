@@ -30,4 +30,9 @@ public class PancakeHouseMenu {
   public ArrayList<MenuItem> getMenuItems() {
     return menuItems;
   }
+
+  public MenuIterator getIterator() {
+    MenuIterator pancakeMenuIterator = new PancakeMenuIterator(getMenuItems());
+    return pancakeMenuIterator;
+  }
 }
