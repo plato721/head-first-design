@@ -6,7 +6,7 @@ public class DinerMenu {
   MenuItem[] menuItems;
 
   public DinerMenu() {
-    MenuItem[] menuItems = new MenuItem[MAX_MENU_ITEMS];
+    menuItems = new MenuItem[MAX_MENU_ITEMS];
 
     addItem("Grand Royale", "A large important. A very enormous. Gigantic big big.",
       false, 13.99);
@@ -30,5 +30,10 @@ public class DinerMenu {
 
   public MenuItem[] getMenuItems() {
     return menuItems;
+  }
+
+  public MenuIterator getIterator() {
+    MenuIterator menuIterator = new DinerMenuIterator(menuItems);
+    return menuIterator;
   }
 }
