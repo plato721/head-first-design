@@ -27,12 +27,8 @@ public class PancakeHouseMenu {
     menuItems.add(menuItem);
   }
 
-  public ArrayList<MenuItem> getMenuItems() {
-    return menuItems;
-  }
-
   public MenuIterator getIterator() {
-    MenuIterator pancakeMenuIterator = new PancakeMenuIterator(getMenuItems());
+    MenuIterator pancakeMenuIterator = new PancakeMenuIterator(menuItems);
     return pancakeMenuIterator;
   }
 }

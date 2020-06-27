@@ -28,10 +28,6 @@ public class DinerMenu {
     menuItemsCount = menuItemsCount + 1;
   }
 
-  public MenuItem[] getMenuItems() {
-    return menuItems;
-  }
-
   public MenuIterator getIterator() {
     MenuIterator menuIterator = new DinerMenuIterator(menuItems);
     return menuIterator;
