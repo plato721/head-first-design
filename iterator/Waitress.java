@@ -16,33 +16,33 @@ public class Waitress {
 
   public void printBreakfastMenu() {
     MenuIterator menuIterator = pancakeHouseMenu.getIterator();
-    printIterator(menuIterator);
+    printMenu(menuIterator);
   }
 
   public void printLunchMenu() {
     MenuIterator menuIterator = dinerMenu.getIterator();
-    printIterator(menuIterator);
+    printMenu(menuIterator);
   }
 
   public void printVegetarianMenu() {
     MenuIterator menuIterator = pancakeHouseMenu.getIterator();
-    printVegetarianIterator(menuIterator);
+    printVegetarianMenu(menuIterator);
 
     menuIterator = dinerMenu.getIterator();
-    printVegetarianIterator(menuIterator);
+    printVegetarianMenu(menuIterator);
   }
 
   public boolean isItemVegetarian(MenuItem menuItem) {
     return menuItem.isVegetarian();
   }
 
-  private void printIterator(MenuIterator menuIterator) {
+  private void printMenu(MenuIterator menuIterator) {
     while(menuIterator.hasNext()){
       System.out.println(menuIterator.getNext());
     }
   }
 
-  private void printVegetarianIterator(MenuIterator menuIterator) {
+  private void printVegetarianMenu(MenuIterator menuIterator) {
     MenuItem curItem = null;
     while(menuIterator.hasNext()){
       curItem = menuIterator.getNext();
