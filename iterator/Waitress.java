@@ -15,20 +15,20 @@ public class Waitress {
   }
 
   public void printBreakfastMenu() {
-    MenuIterator menuIterator = pancakeHouseMenu.getIterator();
+    MenuIterator menuIterator = pancakeHouseMenu.createIterator();
     printMenu(menuIterator);
   }
 
   public void printLunchMenu() {
-    MenuIterator menuIterator = dinerMenu.getIterator();
+    MenuIterator menuIterator = dinerMenu.createIterator();
     printMenu(menuIterator);
   }
 
   public void printVegetarianMenu() {
-    MenuIterator menuIterator = pancakeHouseMenu.getIterator();
+    MenuIterator menuIterator = pancakeHouseMenu.createIterator();
     printVegetarianMenu(menuIterator);
 
-    menuIterator = dinerMenu.getIterator();
+    menuIterator = dinerMenu.createIterator();
     printVegetarianMenu(menuIterator);
   }
 
