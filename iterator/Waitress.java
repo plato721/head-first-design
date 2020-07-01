@@ -1,10 +1,12 @@
 package headFirst.iterator;
 
-public class Waitress {
-  PancakeHouseMenu pancakeHouseMenu;
-  DinerMenu dinerMenu;
+import java.util.Iterator;
 
-  public Waitress(PancakeHouseMenu pancakeHouseMenu, DinerMenu dinerMenu) {
+public class Waitress {
+  Menu pancakeHouseMenu;
+  Menu dinerMenu;
+
+  public Waitress(Menu pancakeHouseMenu, Menu dinerMenu) {
     this.pancakeHouseMenu = pancakeHouseMenu;
     this.dinerMenu = dinerMenu;
   }
@@ -15,17 +17,17 @@ public class Waitress {
   }
 
   public void printBreakfastMenu() {
-    MenuIterator menuIterator = pancakeHouseMenu.createIterator();
+    Iterator<MenuItem> menuIterator = pancakeHouseMenu.createIterator();
     printMenu(menuIterator);
   }
 
   public void printLunchMenu() {
-    MenuIterator menuIterator = dinerMenu.createIterator();
+    Iterator<MenuItem> menuIterator = dinerMenu.createIterator();
     printMenu(menuIterator);
   }
 
   public void printVegetarianMenu() {
-    MenuIterator menuIterator = pancakeHouseMenu.createIterator();
+    Iterator<MenuItem> menuIterator = pancakeHouseMenu.createIterator();
     printVegetarianMenu(menuIterator);
 
     menuIterator = dinerMenu.createIterator();
@@ -36,16 +38,16 @@ public class Waitress {
     return menuItem.isVegetarian();
   }
 
-  private void printMenu(MenuIterator menuIterator) {
+  private void printMenu(Iterator<MenuItem> menuIterator) {
     while(menuIterator.hasNext()){
-      System.out.println(menuIterator.getNext());
+      System.out.println(menuIterator.next());
     }
   }
 
-  private void printVegetarianMenu(MenuIterator menuIterator) {
+  private void printVegetarianMenu(Iterator<MenuItem> menuIterator) {
     MenuItem curItem = null;
     while(menuIterator.hasNext()){
-      curItem = menuIterator.getNext();
+      curItem = menuIterator.next();
       if(curItem.isVegetarian()){ System.out.println(curItem); }
     }
   }
