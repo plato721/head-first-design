@@ -16,6 +16,10 @@ public class MenuItem {
     this.price = price;
   }
 
+  public String getName() {
+    return name;
+  }
+
   public String toString() {
     return name + " $" + Double.toString(price) +
       "\n-----------------\n" +
