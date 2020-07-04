@@ -4,8 +4,9 @@ public class RestaurantDemo {
   public static void main(String[] args) {
     DinerMenu dinerMenu = new DinerMenu();
     PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
+    SteakHouseMenu steakHouseMenu = new SteakHouseMenu();
 
-    Waitress waitress = new Waitress(pancakeHouseMenu, dinerMenu);
+    Waitress waitress = new Waitress(pancakeHouseMenu, dinerMenu, steakHouseMenu);
     waitress.printMenu();
 
     System.out.println("\n***************************************************************************");

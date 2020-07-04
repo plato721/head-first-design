@@ -5,15 +5,18 @@ import java.util.Iterator;
 public class Waitress {
   Menu pancakeHouseMenu;
   Menu dinerMenu;
+  Menu steakhouseMenu;
 
-  public Waitress(Menu pancakeHouseMenu, Menu dinerMenu) {
+  public Waitress(Menu pancakeHouseMenu, Menu dinerMenu, Menu steakhouseMenu) {
     this.pancakeHouseMenu = pancakeHouseMenu;
     this.dinerMenu = dinerMenu;
+    this.steakhouseMenu = steakhouseMenu;
   }
 
   public void printMenu() {
     printBreakfastMenu();
     printLunchMenu();
+    printDinnerMenu();
   }
 
   public void printBreakfastMenu() {
@@ -23,6 +26,11 @@ public class Waitress {
 
   public void printLunchMenu() {
     Iterator<MenuItem> menuIterator = dinerMenu.createIterator();
+    printMenu(menuIterator);
+  }
+
+  public void printDinnerMenu() {
+    Iterator<MenuItem> menuIterator = steakhouseMenu.createIterator();
     printMenu(menuIterator);
   }
 

@@ -1,8 +1,8 @@
 package headFirst.iterator;
 import java.util.HashMap;
-import java.util.Map;
+import java.util.Iterator;
 
-public class SteakHouseMenu {
+public class SteakHouseMenu implements Menu {
   HashMap<String, MenuItem> menuItems;
 
   public SteakHouseMenu() {
@@ -32,7 +32,8 @@ public class SteakHouseMenu {
     menuItems.put(menuItem.getName(), menuItem);
   }
 
-  public Map<String, MenuItem> getMenuItems() {
-    return menuItems;
+  public Iterator createIterator() {
+    return menuItems.values().iterator();
   }
+
 }
