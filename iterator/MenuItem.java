@@ -1,6 +1,6 @@
 package headFirst.iterator;
 
-public class MenuItem {
+public class MenuItem extends MenuComponent {
   String name;
   String description;
   boolean vegetarian;
@@ -20,10 +20,17 @@ public class MenuItem {
     return name;
   }
 
-  public String toString() {
-    return name + " $" + Double.toString(price) +
-      "\n-----------------\n" +
-      description + "\n";
+  public String getDescription() {
+    return description;
+  }
+
+  public void print() {
+    System.out.print("   " + getName());
+     if (isVegetarian()) {
+       System.out.print("(v)");
+     }
+     System.out.println(", " + getPrice());
+     System.out.println("      -- " + getDescription());
   }
 
   public boolean isVegetarian() {
