@@ -2,17 +2,25 @@ package headFirst.iterator;
 
 public class RestaurantDemo {
   public static void main(String[] args) {
-    DinerMenu dinerMenu = new DinerMenu();
-    PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
-    SteakHouseMenu steakHouseMenu = new SteakHouseMenu();
+    MenuComponent allMenus = new Menu(
+      "Unified Menu",
+      "Welcome to the restaurant"
+    );
+    MenuComponent dinerMenu = DinerMenu.createMenu();
+    MenuComponent pancakeHouseMenu = PancakeHouseMenu.createMenu();
+    MenuComponent steakHouseMenu = SteakHouseMenu.createMenu();
 
-    Waitress waitress = new Waitress(pancakeHouseMenu, dinerMenu, steakHouseMenu);
-    waitress.printMenu();
+    allMenus.add(pancakeHouseMenu);
+    allMenus.add(dinerMenu);
+    allMenus.add(steakHouseMenu);
 
-    System.out.println("\n***************************************************************************");
-    System.out.println("***    Now the vegetarian items, featuring a lot of duplicate code!     ***");
-    System.out.println("***************************************************************************\n\n");
+    Waitress waitress = new Waitress(allMenus);
+    waitress.print();
 
-    waitress.printVegetarianMenu();
+//     System.out.println("\n***************************************************************************");
+//     System.out.println("***    Now the vegetarian items, featuring a lot of duplicate code!     ***");
+//     System.out.println("***************************************************************************\n\n");
+//
+//     waitress.printVegetarianMenu();
   }
 }

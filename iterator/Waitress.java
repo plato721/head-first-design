@@ -9,7 +9,7 @@ public class Waitress {
     this.allMenus = allMenus;
   }
 
-  public void printMenu() {
+  public void print() {
     allMenus.print();
   }
 }

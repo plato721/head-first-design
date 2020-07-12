@@ -1,37 +1,24 @@
 package headFirst.iterator;
 
-import java.util.Iterator;
+public class DinerMenu {
+  public static MenuComponent createMenu() {
+    Menu menu = new Menu(
+      "Diner",
+      "Why is it that the spoon is always greasy?"
+    );
 
-public class DinerMenu implements Menu {
-  static final int MAX_MENU_ITEMS = 6;
-  int menuItemsCount = 0;
-  MenuItem[] menuItems;
-
-  public DinerMenu() {
-    menuItems = new MenuItem[MAX_MENU_ITEMS];
-
-    addItem("Grand Royale", "A large important. A very enormous. Gigantic big big.",
+    menu.add("Grand Royale", "A large important. A very enormous. Gigantic big big.",
       false, 13.99);
 
-    addItem("Skinny Phil", "Dry chicken breast, squeeze of lemon, oregano for some reason, distilled water with added asphalt particulate.",
+    menu.add("Skinny Phil", "Dry chicken breast, squeeze of lemon, oregano for some reason, distilled water with added asphalt particulate.",
       false, 8.99);
 
-    addItem("Your Mom", "'You want my mom??'' 'No, Your Mom.'' 'That's what I said!'",
+    menu.add("Your Mom", "'You want my mom??'' 'No, Your Mom.'' 'That's what I said!'",
       false, 10.50);
 
-    addItem("Your Sister", "Really? You have a Your Mom and a Your Sister? Yes. This is not a mature diner.",
+    menu.add("Your Sister", "Really? You have a Your Mom and a Your Sister? Yes. This is not a mature diner.",
       true, 11.99);
-  }
 
-  public void addItem(String name, String description,
-                      boolean vegetarian, double price) {
-    MenuItem menuItem = new MenuItem(name, description, vegetarian, price);
-    menuItems[menuItemsCount] = menuItem;
-    menuItemsCount = menuItemsCount + 1;
-  }
-
-  public Iterator<MenuItem> createIterator() {
-    Iterator<MenuItem> menuIterator = new DinerMenuIterator(menuItems);
-    return menuIterator;
+    return menu;
   }
 }
