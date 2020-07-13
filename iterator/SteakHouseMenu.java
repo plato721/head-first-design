@@ -15,6 +15,13 @@ public class SteakHouseMenu {
     );
 
     menu.add(
+      "Beyond Porterhouse",
+      "If you're a vegetarian, would you really order this? Or just get some baby corns from the salad bar?",
+      true,
+      75
+    );
+
+    menu.add(
       "T-Bone",
       "A boneless, skinless, cutlet... What do you think it is? It's a steak. With a bone in it. That resembles a T.",
       false,

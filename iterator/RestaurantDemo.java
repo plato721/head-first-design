@@ -19,10 +19,6 @@ public class RestaurantDemo {
     Waitress waitress = new Waitress(allMenus);
     waitress.print();
 
-//     System.out.println("\n***************************************************************************");
-//     System.out.println("***    Now the vegetarian items, featuring a lot of duplicate code!     ***");
-//     System.out.println("***************************************************************************\n\n");
-//
-//     waitress.printVegetarianMenu();
+    waitress.printVegetarianMenu();
   }
 }

@@ -1,4 +1,5 @@
 package headFirst.iterator;
+import java.util.Iterator;
 
 public abstract class MenuComponent {
   // composite operations begin
@@ -33,5 +34,9 @@ public abstract class MenuComponent {
 
   public void print() {
     throw new UnsupportedOperationException();
+  }
+
+  public Iterator createIterator() {
+    return new NullIterator();
   }
 }
