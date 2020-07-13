@@ -9,10 +9,12 @@ public class RestaurantDemo {
     MenuComponent dinerMenu = DinerMenu.createMenu();
     MenuComponent pancakeHouseMenu = PancakeHouseMenu.createMenu();
     MenuComponent steakHouseMenu = SteakHouseMenu.createMenu();
+    MenuComponent dessertMenu = DessertMenu.createMenu();
 
     allMenus.add(pancakeHouseMenu);
     allMenus.add(dinerMenu);
     allMenus.add(steakHouseMenu);
+    steakHouseMenu.add(dessertMenu);
 
     Waitress waitress = new Waitress(allMenus);
     waitress.print();

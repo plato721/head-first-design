@@ -41,7 +41,7 @@ public class Menu extends MenuComponent {
 
   public void print() {
     System.out.print("\n" + getName());
-    System.out.println(", " + getDescription());
+    System.out.println(": " + getDescription());
     System.out.println("-------------------------");
 
     Iterator<MenuComponent> iterator = menuComponents.iterator();
