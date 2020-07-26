@@ -5,4 +5,5 @@ public interface GumballState {
   public void insertQuarter();
   public void ejectQuarter();
   public void dispense();
+  public void refill();
 }

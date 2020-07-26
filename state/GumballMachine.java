@@ -47,6 +47,10 @@ public class GumballMachine {
     return winnerState;
   }
 
+  public int getCount() {
+    return count;
+  }
+
   public void setState(GumballState newState) {
     currentState = newState;
   }
@@ -68,19 +72,16 @@ public class GumballMachine {
      currentState.dispense();
    }
 
+   public void refill(int count) {
+     this.count += count;
+     currentState.refill();
+   }
+
   public void releaseBall() {
    if(count > 0) {
      count -=1;
      System.out.println("A gumball comes rolling down the slot...");
    }
-  }
-
-  public void fill(int count) {
-    this.count += count;
-    if (count > 0 && currentState == getSoldOutState()) {
-      currentState = getNoQuarterState();
-    }
-    System.out.println(currentState);
   }
 
   public String toString() {

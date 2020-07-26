@@ -24,6 +24,10 @@ public class NoQuarterState implements GumballState {
     System.out.println("You need to pay first");
   }
 
+  public void refill() {
+    System.out.println("Gumballs filled! Current count is: " + gumballMachine.getCount());
+  }
+
   public String toString() {
     return "Machine is waiting for a quarter";
   }

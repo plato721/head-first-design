@@ -34,6 +34,10 @@ public class HasQuarterState implements GumballState {
      System.out.println("Will dispense after crank turned.");
    }
 
+   public void refill() {
+     System.out.println("Gumballs filled! Current count is: " + gumballMachine.getCount());
+   }
+
    public String toString() {
      return "You inserted a quarter";
    }

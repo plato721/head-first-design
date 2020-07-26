@@ -26,4 +26,11 @@ public class SoldOutState implements GumballState {
   public String toString() {
     return "Machine is sold out";
   }
+
+  public void refill() {
+    System.out.println("Gumballs filled! Current count is: " + gumballMachine.getCount());
+    if (gumballMachine.getCount() > 1) {
+      gumballMachine.setState(gumballMachine.getNoQuarterState());
+    }
+  }
 }

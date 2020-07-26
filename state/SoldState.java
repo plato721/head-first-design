@@ -28,4 +28,8 @@ public class SoldState implements GumballState {
       gumballMachine.setState(gumballMachine.getSoldOutState());
     }
   }
+
+  public void refill() {
+    System.out.println("Gumballs filled! Current count is: " + gumballMachine.getCount());
+  }
 }
