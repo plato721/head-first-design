@@ -17,5 +17,22 @@ public class GumballMachineTestDrive {
 
     System.out.println(g);
 
+    g.insertQuarter();
+    g.turnCrank();
+    g.insertQuarter();
+    g.turnCrank();
+    g.ejectQuarter();
+
+    System.out.println(g);
+
+    g.insertQuarter();
+    g.insertQuarter();
+    g.turnCrank();
+    g.insertQuarter();
+    g.turnCrank();
+    g.insertQuarter();
+    g.turnCrank();
+
+    System.out.println(g);
   }
 }
