@@ -1,9 +1,9 @@
 package headFirst.state;
 
-public class SoldState implements GumballState {
+public class WinnerState implements GumballState {
   public GumballMachine gumballMachine;
 
-  public SoldState (GumballMachine g) {
+  public WinnerState (GumballMachine g) {
     gumballMachine = g;
   }
 
@@ -20,6 +20,8 @@ public class SoldState implements GumballState {
   }
 
   public void dispense() {
+    System.out.println("Winner! Dispensing two gumballs.");
+    gumballMachine.releaseBall();
     gumballMachine.releaseBall();
 
     if (gumballMachine.count > 1) {

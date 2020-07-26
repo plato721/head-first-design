@@ -5,6 +5,7 @@ public class GumballMachine {
   public GumballState noQuarterState;
   public GumballState hasQuarterState;
   public GumballState soldState;
+  public GumballState winnerState;
 
   public GumballState currentState = null;
 
@@ -17,6 +18,7 @@ public class GumballMachine {
     noQuarterState = new NoQuarterState(this);
     hasQuarterState = new HasQuarterState(this);
     soldState = new SoldState(this);
+    winnerState = new WinnerState(this);
 
     if(count > 1) {
       currentState = noQuarterState;
@@ -39,6 +41,10 @@ public class GumballMachine {
 
   public GumballState getSoldState() {
     return soldState;
+  }
+
+  public GumballState getWinnerState() {
+    return winnerState;
   }
 
   public void setState(GumballState newState) {
