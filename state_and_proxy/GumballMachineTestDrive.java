@@ -3,38 +3,24 @@ package headFirst.state;
 import java.rmi.*;
 
 public class GumballMachineTestDrive {
-  public static void main (String[] args) throws RemoteException {
-    GumballMachine g = new GumballMachine("Allentown", 5);
+  public static void main (String[] args) {
+    GumballMachine gumballMachine = null;
+    int gumballCount;
 
-    System.out.println(g);
+    if(args.length < 2) {
+      System.out.println("Usage is: ");
+      System.out.println("java GumballMachineTestDrive <location> <gumball count>");
+      System.exit(1);
+    }
 
-    g.insertQuarter();
-    g.turnCrank();
 
-    System.out.println(g);
+    try {
+      gumballCount = Integer.parseInt(args[1]);
+      gumballMachine = new GumballMachine(args[0], gumballCount);
+      Naming.rebind("//" + args[0] + "/gumballmachine", gumballMachine);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
 
-    g.insertQuarter();
-    g.ejectQuarter();
-    g.turnCrank();
-
-    System.out.println(g);
-
-    g.insertQuarter();
-    g.turnCrank();
-    g.insertQuarter();
-    g.turnCrank();
-    g.ejectQuarter();
-
-    System.out.println(g);
-
-    g.insertQuarter();
-    g.insertQuarter();
-    g.turnCrank();
-    g.insertQuarter();
-    g.turnCrank();
-    g.insertQuarter();
-    g.turnCrank();
-
-    System.out.println(g);
   }
 }
