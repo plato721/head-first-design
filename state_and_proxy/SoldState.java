@@ -1,7 +1,8 @@
 package headFirst.state;
 
 public class SoldState implements GumballState {
-  public GumballMachine gumballMachine;
+  private static final long serialVersionUID = 2L;
+  transient GumballMachine gumballMachine;
 
   public SoldState (GumballMachine g) {
     gumballMachine = g;

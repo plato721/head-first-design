@@ -1,6 +1,8 @@
 package headFirst.state;
 
-public interface GumballState {
+import java.io.*;
+
+public interface GumballState extends Serializable {
   public void turnCrank();
   public void insertQuarter();
   public void ejectQuarter();
