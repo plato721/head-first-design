@@ -1,4 +1,4 @@
-package headFirst.state;
+package headFirst.proxy;
 
 public class SoldOutState implements GumballState {
   private static final long serialVersionUID = 2L;

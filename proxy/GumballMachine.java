@@ -1,4 +1,4 @@
-package headFirst.state;
+package headFirst.proxy;
 
 import java.rmi.*;
 import java.rmi.server.*;

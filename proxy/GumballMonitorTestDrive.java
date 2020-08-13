@@ -1,13 +1,14 @@
-package headFirst.state;
+package headFirst.proxy;
 
 import java.rmi.*;
 
 public class GumballMonitorTestDrive {
   public static void main(String[] args) {
     String[] locations = {
-      "rmi://santafe.mightygumball.com/gumballmachine",
-      "rmi://boulder.mightygumball.com/gumballmachine",
-      "rmi://seattle.mightygumball.com/gumballmachine"
+//       "rmi://santafe.mightygumball.com/gumballmachine",
+//       "rmi://boulder.mightygumball.com/gumballmachine",
+//       "rmi://seattle.mightygumball.com/gumballmachine"
+"rmi://localhost/gumballmachine"
     };
 
     GumballMonitor[] monitors = new GumballMonitor[locations.length];
