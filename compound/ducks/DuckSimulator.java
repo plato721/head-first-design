@@ -1,5 +1,7 @@
 package headFirst.compoundDucks;
 
+import java.util.ArrayList;
+
 public class DuckSimulator {
   public static void main(String[] args) {
     DuckSimulator sim = new DuckSimulator();
@@ -7,21 +9,20 @@ public class DuckSimulator {
   }
 
   public void run() {
-    Quackable darkwing = new QuackCounter(new DarkwingDuck());
-    Quackable mallard = new QuackCounter(new MallardDuck());
-    Quackable rubber = new QuackCounter(new RubberDuck());
-    Quackable decoy = new QuackCounter(new DecoyDuck());
-    Quackable call = new QuackCounter(new DuckCall());
-    Quackable goose = new QuackCounter(new GooseAdapter(new Goose()));
+    ArrayList<Quackable> ducks = new ArrayList<Quackable>();
+
+    ducks.add(new QuackCounter(new DarkwingDuck()));
+    ducks.add(new QuackCounter(new MallardDuck()));
+    ducks.add(new QuackCounter(new RubberDuck()));
+    ducks.add(new QuackCounter(new DecoyDuck()));
+    ducks.add(new QuackCounter(new DuckCall()));
+    ducks.add(new QuackCounter(new GooseAdapter(new Goose())));
 
     System.out.println("\nDuck Simulator");
 
-    simulate(darkwing);
-    simulate(mallard);
-    simulate(rubber);
-    simulate(decoy);
-    simulate(call);
-    simulate(goose);
+    for(Quackable duck : ducks) {
+      simulate(duck);
+    }
 
     System.out.println("There were " + QuackCounter.quackCount + " quacks.");
   }
