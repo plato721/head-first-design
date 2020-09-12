@@ -3,20 +3,26 @@ package headFirst.compoundDucks;
 import java.util.ArrayList;
 
 public class DuckSimulator {
+  AbstractDuckFactory duckFactory;
+
   public static void main(String[] args) {
-    DuckSimulator sim = new DuckSimulator();
+    DuckSimulator sim = new DuckSimulator(new QuackCounterDuckFactory());
     sim.run();
+  }
+
+  public DuckSimulator(AbstractDuckFactory duckFactory) {
+    this.duckFactory = duckFactory;
   }
 
   public void run() {
     ArrayList<Quackable> ducks = new ArrayList<Quackable>();
 
-    ducks.add(new QuackCounter(new DarkwingDuck()));
-    ducks.add(new QuackCounter(new MallardDuck()));
-    ducks.add(new QuackCounter(new RubberDuck()));
-    ducks.add(new QuackCounter(new DecoyDuck()));
-    ducks.add(new QuackCounter(new DuckCall()));
-    ducks.add(new QuackCounter(new GooseAdapter(new Goose())));
+    ducks.add(duckFactory.createDarkwingDuck());
+    ducks.add(duckFactory.createMallardDuck());
+    ducks.add(duckFactory.createRubberDuck());
+    ducks.add(duckFactory.createDecoyDuck());
+    ducks.add(duckFactory.createDuckCall());
+    ducks.add(new GooseAdapter(new Goose()));
 
     System.out.println("\nDuck Simulator");
 
