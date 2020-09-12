@@ -7,28 +7,32 @@ public class DuckSimulator {
 
   public static void main(String[] args) {
     DuckSimulator sim = new DuckSimulator(new QuackCounterDuckFactory());
-    sim.run();
+    sim.simulate();
   }
 
   public DuckSimulator(AbstractDuckFactory duckFactory) {
     this.duckFactory = duckFactory;
   }
 
-  public void run() {
-    ArrayList<Quackable> ducks = new ArrayList<Quackable>();
+  public void simulate() {
+    DuckFlock allDucks = new DuckFlock();
+    DuckFlock mallardFlock = new DuckFlock();
 
-    ducks.add(duckFactory.createDarkwingDuck());
-    ducks.add(duckFactory.createMallardDuck());
-    ducks.add(duckFactory.createRubberDuck());
-    ducks.add(duckFactory.createDecoyDuck());
-    ducks.add(duckFactory.createDuckCall());
-    ducks.add(new GooseAdapter(new Goose()));
+    mallardFlock.add(duckFactory.createMallardDuck());
+    mallardFlock.add(duckFactory.createMallardDuck());
+    mallardFlock.add(duckFactory.createMallardDuck());
+    mallardFlock.add(duckFactory.createMallardDuck());
+
+    allDucks.add(duckFactory.createDarkwingDuck());
+    allDucks.add(mallardFlock);
+    allDucks.add(duckFactory.createRubberDuck());
+    allDucks.add(duckFactory.createDecoyDuck());
+    allDucks.add(duckFactory.createDuckCall());
+    allDucks.add(new GooseAdapter(new Goose()));
 
     System.out.println("\nDuck Simulator");
 
-    for(Quackable duck : ducks) {
-      simulate(duck);
-    }
+    allDucks.quack();
 
     System.out.println("There were " + QuackCounter.quackCount + " quacks.");
   }
