@@ -15,7 +15,7 @@ public class DuckSimulator {
   }
 
   public void simulate() {
-    DuckFlock allDucks = new DuckFlock();
+
     DuckFlock mallardFlock = new DuckFlock();
 
     mallardFlock.add(duckFactory.createMallardDuck());
@@ -23,15 +23,24 @@ public class DuckSimulator {
     mallardFlock.add(duckFactory.createMallardDuck());
     mallardFlock.add(duckFactory.createMallardDuck());
 
+    DuckFlock allDucks = new DuckFlock();
+
     allDucks.add(duckFactory.createDarkwingDuck());
-    allDucks.add(mallardFlock);
     allDucks.add(duckFactory.createRubberDuck());
     allDucks.add(duckFactory.createDecoyDuck());
     allDucks.add(duckFactory.createDuckCall());
     allDucks.add(new GooseAdapter(new Goose()));
+    allDucks.add(mallardFlock);
 
-    System.out.println("\nDuck Simulator");
+    Observer quackologist = new Quackologist();
+    allDucks.registerObserver(quackologist);
 
+    System.out.println("\nDuck Simulator\n------------");
+
+    System.out.println("Mallards Only:");
+    mallardFlock.quack();
+
+    System.out.println("\nAll da ducks:");
     allDucks.quack();
 
     System.out.println("There were " + QuackCounter.quackCount + " quacks.");
