@@ -10,6 +10,7 @@ public class Observable implements QuackObservable {
   public Observable (QuackObservable duck) {
     this.duck = duck;
   }
+
   public void registerObserver(Observer observer) {
     observers.add(observer);
   }

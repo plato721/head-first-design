@@ -49,5 +49,4 @@ public class DuckSimulator {
   private void simulate(Quackable duck) {
     duck.quack();
   }
-
 }
